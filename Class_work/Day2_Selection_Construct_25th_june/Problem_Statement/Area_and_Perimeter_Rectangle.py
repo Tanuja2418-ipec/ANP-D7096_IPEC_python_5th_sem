@@ -28,12 +28,12 @@ print("The length is : ",length)
 print("The length is : ",breath)
 
 
-#---------------------------------------
+#------------------------------------------------
 
 #Displaying the area of Retangle 
 print ("The area of Retangle is : ", length*breath , "m^2")
 
 #Displaying the Perimeter of Retangle 
-print ("The Perimeter of Retangle is : ",2* (length+breath) , "m")
+print ("The Perimeter of Retangle is : ",2*(length+breath) , "m")
 
 
