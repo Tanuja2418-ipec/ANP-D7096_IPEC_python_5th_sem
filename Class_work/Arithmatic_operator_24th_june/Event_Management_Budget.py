@@ -3,7 +3,7 @@
 
 "Coding Section"
 
-Total_Event_Cost = int(input("Enter the Cost of the Event : "))
+Total_Event_Cost = int(input("Enter the Cost of the Event(in rupees) : "))
 Number_of_Participants = int(input("Enter the number the Paticipants : "))
    
 
@@ -12,4 +12,4 @@ Amount_per_Participant = Total_Event_Cost/ Number_of_Participants
 
 "Output"
 
-print("The Amount per Participants is ", Amount_per_Participant)
+print("The Amount per Participants is: Rs ", Amount_per_Participant,)

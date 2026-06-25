@@ -10,6 +10,8 @@ Number_of_Children = int(input("Enter the total number of children: "))
 
 Remaining_Slices = Pizza_Slices % Number_of_Children
 
+
+
 "Output"
 
 print("Remaining Slices are ",Remaining_Slices )

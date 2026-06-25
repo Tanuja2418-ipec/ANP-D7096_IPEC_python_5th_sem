@@ -3,12 +3,12 @@
 
 "Coding Section"
 
-price = float(input("Enter the price of the product :  "))
-Discount = float(input("Enter the discount to be applied : "))
+price = float(input("Enter the price of the product(in Rs) :  "))
+Discount = float(input("Enter the discount to be applied( in %) : "))
 
 
 Final_price = price - Discount
 
 "Output"
 
-print("The final amount is ", Final_price)
+print("The final amount is : Rs ", Final_price)

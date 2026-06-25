@@ -10,4 +10,4 @@ Total_cost = Cost*Number_of_GBs
 
 "Output"
 
-print("The total recharge cost is ", Total_cost)
+print("The total recharge cost is :  Rs ", Total_cost)

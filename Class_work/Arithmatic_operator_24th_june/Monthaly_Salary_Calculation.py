@@ -5,9 +5,9 @@
 
 "COding Section"
 
-Basic_Salary = float(input("Enter the Basic Salary : "))
-Incentive = float(input("Enter the Incentive : "))
+Basic_Salary = float(input("Enter the Basic Salary (in Rs): "))
+Incentive = float(input("Enter the Incentive (in Rs) : "))
 
 Total_Salary = Basic_Salary + Incentive
 
-print("Total Salary is : ", Total_Salary)
+print("Total Salary is :  Rs ", Total_Salary)
