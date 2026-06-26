@@ -20,44 +20,66 @@ Review Reason: Income criteria not satisfied. """
 #--------------------------Coding section---------------------------------
 
 
-#taking input from user
+# Taking input from the user
 credit_score = int(input("Enter Credit Score: "))
-
-#validating credit score input
-if credit_score < 0 or credit_score > 850:
-    exit("Credit Score must be between 0 and 850. Please enter a valid credit score.")
-
-#---------------------------------------------------------------------------------------------
-
 annual_income = int(input("Enter Annual Income: "))
+existing_loan = int(input("Enter Existing Loan Amount: "))
 
-#validating annual income input
-if annual_income < 0:
-    exit("Annual Income cannot be negative. Please enter a valid income.")
+# Variable to count the number of failed conditions
+failed_conditions = 0
 
-#----------------------------------------------------------------------------------------------
+# Variable to store the reason(s) for failure
+reason = ""
 
-existing_loan_amount = int(input("Enter Existing Loan Amount: "))
+# Check Credit Score condition
+if credit_score < 750:
+    failed_conditions += 1
+    reason += "Credit Score criteria not satisfied. "
 
-#validating existing loan amount input
-if existing_loan_amount < 0:
-    exit("Existing Loan Amount cannot be negative. Please enter a valid loan amount.")
+# Check Annual Income condition
+if annual_income < 800000:
+    failed_conditions += 1
+    reason += "Income criteria not satisfied. "
 
-#---------------------------------------------------------------------------------------------  
+# Check Existing Loan Amount condition
+if existing_loan > 200000:
+    failed_conditions += 1
+    reason += "Existing Loan Amount criteria not satisfied. "
 
+# Decide the loan status based on the number of failed conditions
+if failed_conditions == 0:
+    # All conditions are satisfied
+    print("Loan Status: Approved")
 
-#conditions for loan approval
-if credit_score >= 750:
-    credit_score_condition = True
+elif failed_conditions == 1:
+    # Only one condition failed
+    print("Loan Status: Manual Review")
+    print("Review Reason:", reason)
+
 else:
-    credit_score_condition = False
+    # More than one condition failed
+    print("Loan Status: Rejected")
+    print("Reasons:", reason)
 
-if annual_income >= 800000:
-    annual_income_condition = True
-else:
-    annual_income_condition = False
 
-if existing_loan_amount <= 200000:
-    existing_loan_condition = True
-else:
-    existing_loan_condition = False
+#--------------------------output section---------------------------------
+""" 
+Sample Input
+Enter Credit Score: 780
+Enter Annual Income: 750000
+Enter Existing Loan Amount: 100000
+
+Sample Output
+Loan Status: Manual Review
+Review Reason: Income criteria not satisfied. 
+
+sample Input
+Enter Credit Score: 700
+Enter Annual Income: 70000
+Enter Existing Loan Amount: 100000
+
+sample Output
+Loan Status: Rejected
+Reasons: Credit Score criteria not satisfied. Income criteria not satisfied.
+Existing Loan Amount criteria not satisfied. 
+"""
