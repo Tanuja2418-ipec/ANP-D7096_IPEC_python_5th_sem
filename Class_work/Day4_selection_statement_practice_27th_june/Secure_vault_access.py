@@ -19,7 +19,11 @@
 #Taking input from the user
 security_code = int(input("Enter the security code: "))
 
-#Validating the security code
+#validating the security code
+if security_code < 0 or security_code > 9999:
+    exit("Invalid security code. Please enter a 4-digit code.")
+
+#checking if the entered security code is correct
 if security_code == 7890:
     print("Access Granted to the Vault.")
 
