@@ -14,8 +14,11 @@
 #taking the input from the user
 weight = float(input("Enter the package weight in kg: "))
 
-#Calculating the delivery chage based on the weight
+#Validation the weight
+if weight < 0:
+    exit("Invalid weight. Please enter a positive value.")
 
+#Calculating the delivery chage based on the weight
 if weight <= 2:
     delivery_charge = 50
 elif weight > 2 and weight <= 5:
