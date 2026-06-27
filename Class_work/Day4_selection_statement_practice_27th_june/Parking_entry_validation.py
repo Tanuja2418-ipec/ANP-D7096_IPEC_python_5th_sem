@@ -13,6 +13,10 @@ ample Output Entry Denied """
 #taking input from the user
 parking_pass = int(input("Enter the parking pass (1 for Valid Pass/0 for No Pass): "))
 
+#validating the input
+if parking_pass < 0 or parking_pass > 1:
+    exit("Invalid input")
+
 #checking if the parking pass is valid
 if parking_pass == 1:
     print("Entry Allowed")
