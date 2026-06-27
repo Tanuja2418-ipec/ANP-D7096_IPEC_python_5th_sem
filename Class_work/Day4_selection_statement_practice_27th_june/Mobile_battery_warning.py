@@ -13,6 +13,10 @@
 #taking input from the user
 battery_percentage = float(input("Enter the battery percentage:"))
 
+#Validating the battery percentage
+if battery_percentage < 0 or battery_percentage > 100:
+    exit("Invalid battery percentage. Please enter a value between 0 and 100.")
+
 #checking if the battery is below 15%
 if battery_percentage < 15:
     print("Connect Charger Immediately")
