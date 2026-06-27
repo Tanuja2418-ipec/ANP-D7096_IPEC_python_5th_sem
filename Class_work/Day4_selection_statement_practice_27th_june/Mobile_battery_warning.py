@@ -11,7 +11,7 @@
 #--------------------------Coding Section-----------------------------------
 
 #taking input from the user
-battery_percentage = float(input("Enter the battery percentage:"))
+battery_percentage = int(input("Enter the battery percentage:"))
 
 #Validating the battery percentage
 if battery_percentage < 0 or battery_percentage > 100:
