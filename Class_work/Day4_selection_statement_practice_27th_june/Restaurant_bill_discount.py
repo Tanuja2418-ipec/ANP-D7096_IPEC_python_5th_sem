@@ -15,7 +15,11 @@
 #Taking input from the user
 bill_amount = float(input("Enter the total bill amount(in Rs): "))
 
-#Calculatin the discount based on the bill amount
+#Validating the bill amount
+if bill_amount < 0:
+    exit("Invalid bill amount. Please enter a positive value.")
+
+#Calculating the discount based on the bill amount
 if bill_amount < 1000:
     discount = 0
 elif bill_amount >= 1000 and bill_amount < 3000:
