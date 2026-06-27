@@ -16,15 +16,17 @@
 bill_amount = float(input("Enter the total bill amount(in Rs): "))
 
 #Validating the bill amount
-if bill_amount < 0:
-    exit("Invalid bill amount. Please enter a positive value.")
+if bill_amount <= 0:
+    exit("Invalid bill amount.Bill amount must be positive.")
 
 #Calculating the discount based on the bill amount
 if bill_amount < 1000:
     discount = 0
 elif bill_amount >= 1000 and bill_amount < 3000:
+    #applying 10% discount for bill amount between ₹1000 and ₹2999
     discount = 10
 else:
+    #applying 20% discount for bill amount ₹3000 or more
     discount = 20
 
 print("The Discount applied is:", discount, "%")
