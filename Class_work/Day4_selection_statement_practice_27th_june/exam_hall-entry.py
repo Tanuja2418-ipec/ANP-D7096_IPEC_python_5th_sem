@@ -13,6 +13,10 @@ Sample Output Enter Examination Hall """
 #taking input from the user
 admit_card = int(input("Enter 1 if Admit Card is Available or 0 if Admit Card is Not Available: "))
 
+#validating the input
+if admit_card < 0 or admit_card > 1:
+    exit("Invalid input..")
+
 #checking if the admit card is available
 if admit_card == 1:
     print("Enter Examination Hall")
