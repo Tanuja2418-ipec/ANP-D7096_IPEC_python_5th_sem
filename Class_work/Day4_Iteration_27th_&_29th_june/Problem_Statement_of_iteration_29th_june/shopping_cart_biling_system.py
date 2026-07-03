@@ -82,3 +82,31 @@ print("\nTotal Bill Amount:", total_bill)
 print("Most Expensive Product:", most_expensive, "-", highest_cost)
 print("Cheapest Product:", cheapest, "-", lowest_cost)
 print("Average Product Cost:", average_cost)
+
+
+#-----------------------------output section---------------------------------
+
+"""
+Output:
+Enter the number of products: 3
+Product 1
+Enter Product Name: Apple
+Enter Quantity: 2
+Enter Price per Unit: 3
+Apple Cost = 6.0
+Product 2
+Enter Product Name: Banana
+Enter Quantity: 5
+Enter Price per Unit: 1
+Banana Cost = 5.0
+Product 3
+Enter Product Name: Orange
+Enter Quantity: 3
+Enter Price per Unit: 2
+Orange Cost = 6.0
+Total Bill Amount: 17.0
+Most Expensive Product: Apple - 6.0
+Cheapest Product: Banana - 5.0
+Average Product Cost: 5.666666666666667
+
+"""
