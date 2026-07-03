@@ -41,3 +41,20 @@ while transaction != 0:
 print("Total Deposit:", total_deposit)
 print("Total Withdrawal:", total_withdrawal)
 print("Final Balance:", final_balance)
+
+
+#-----------------------------output section---------------------------------
+
+
+"""
+Output:
+Enter transaction amount (0 to stop): 100
+Enter transaction amount (0 to stop): -50
+Enter transaction amount (0 to stop): 200
+Enter transaction amount (0 to stop): -30   
+Enter transaction amount (0 to stop): 0
+Total Deposit: 300.0
+Total Withdrawal: 80.0
+Final Balance: 220.0
+
+"""
