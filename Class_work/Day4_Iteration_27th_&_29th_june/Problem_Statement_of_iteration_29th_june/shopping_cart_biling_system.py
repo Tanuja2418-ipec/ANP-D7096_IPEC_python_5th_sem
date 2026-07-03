@@ -62,7 +62,7 @@ for i in range(2, n + 1):
     print(name, "Cost =", cost)
 
     # Add to total bill
-    total_bill += cost
+    total_bill = total_bill + cost
 
     # Check for most expensive product
     if cost > highest_cost:

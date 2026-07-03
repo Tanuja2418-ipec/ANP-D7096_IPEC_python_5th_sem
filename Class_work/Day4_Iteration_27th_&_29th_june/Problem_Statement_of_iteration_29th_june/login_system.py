@@ -21,7 +21,7 @@ attempt = 1
 while attempt <= 3:
 
     # Take username and password from the user
-    username = input(f"Attempt {attempt} - Enter Username: ")
+    username = input(f"Attempt {attempt} Enter Username: ")
     password = input("Enter Password: ")
 
     # Check if the credentials are correct
@@ -37,3 +37,16 @@ while attempt <= 3:
 # If all 3 attempts are used
 if attempt > 3:
     print("Account Locked")
+
+
+#------------------------------------output section--------------------------------------------
+
+"""
+Sample Output
+Attempt 1 Username: admin 
+          Password: abc 
+          Invalid Credentials 
+Attempt 2 Username: admin 
+          Password: python123 
+          Login Successful
+"""

@@ -16,7 +16,7 @@ Final Balance"""
 # Initialize variables
 total_deposit = 0
 total_withdrawal = 0
-balance = 0
+final_balance = 0
 
 # Take the first transaction
 transaction = float(input("Enter transaction amount (0 to stop): "))
@@ -40,4 +40,4 @@ while transaction != 0:
 # Display the results
 print("Total Deposit:", total_deposit)
 print("Total Withdrawal:", total_withdrawal)
-print("Final Balance:", balance)
+print("Final Balance:", final_balance)
