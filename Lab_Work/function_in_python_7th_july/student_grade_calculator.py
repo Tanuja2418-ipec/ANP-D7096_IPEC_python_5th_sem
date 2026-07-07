@@ -52,17 +52,22 @@ for i in range(5):
 Enter marks of student: 56
 Marks :  56
 Grade :   C
+
 Enter marks of student: 89
 Marks :  89
 Grade :   A
+
 Enter marks of student: 93
 Marks :  93
 Grade :  A+
+
 Enter marks of student: 34
 Marks :  34
 Grade :  Fail
+
 Enter marks of student: 70
 Marks :  70
 Grade :   B
+
 """    
 
