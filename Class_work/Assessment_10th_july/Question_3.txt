@@ -1,0 +1,71 @@
+Question 3: Employee Salary Report (10 Marks)
+
+Problem Statement:
+
+Create a Python program that stores employee details in a dictionary.
+
+Each employee should have:
+
+  . Employee ID
+  . Name
+  . Salary
+
+The program should allow the user to enter details for 5 employees.
+
+After storing the data, the program should:
+
+  1. Display all employee details.
+  2. Find the employee having the highest salary.
+  3. Display the average salary.
+
+
+#------------------------Coding Section--------------------------------------
+
+
+# Creating an empty dictionary to store employee details
+employees = {}
+
+# Input details of 5 employees
+for i in range(5):
+    print("\nEnter details of Employee", i + 1)
+
+    emp_id = int(input("Enter Employee ID: "))
+    name = input("Enter Employee Name: ")
+    salary = float(input("Enter Employee Salary: "))
+
+    # Store name and salary in the dictionary
+    employees[emp_id] = {
+        "Name": name,
+        "Salary": salary
+    }
+
+# Display all employee details
+print("\nEmployee Details")
+print("ID\tName\tSalary")
+
+for emp_id, details in employees.items():
+    print(emp_id, "\t", details["Name"], "\t", details["Salary"])
+
+# Find employee with the highest salary
+highest_salary = 0
+highest_employee = ""
+
+total_salary = 0
+
+for details in employees.values():
+    total_salary += details["Salary"]
+
+    if details["Salary"] > highest_salary:
+        highest_salary = details["Salary"]
+        highest_employee = details["Name"]
+
+# Calculate average salary
+average_salary = total_salary / len(employees)
+
+# Display highest salary details
+print("\nHighest Salary")
+print(highest_employee, highest_salary)
+
+# Display average salary
+print("\nAverage Salary")
+print(average_salary)

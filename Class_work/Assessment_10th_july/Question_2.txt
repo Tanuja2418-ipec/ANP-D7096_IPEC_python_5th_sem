@@ -1,0 +1,69 @@
+Question 2: Password Validator (10 Marks)
+
+Write a Python program that repeatedly asks the user to enter a password until it meets all of the following conditions:
+
+ The password must be at least 8 characters long.
+ It must contain at least one uppercase letter.
+ It must contain at least one lowercase letter.
+ It must contain at least one digit.
+
+Use a while loop to repeatedly accept input from the user and a user-defined function** to validate the password. If the password does not satisfy all the conditions, display **"Invalid Password"** and ask the user to enter the password again.
+
+Once a valid password is entered, display "Password Accepted" and terminate the program using the **break** statement.
+
+Sample Input
+abc
+password
+Password
+Password123
+
+Sample Output
+Invalid Password
+Invalid Password
+Invalid Password
+Password Accepted
+
+
+
+#--------------------------Coding section----------------------------
+
+
+# Repeat until the user enters a valid password
+while True:
+
+    # Taking input of password from the user
+    password = input("Enter Password: ")
+
+    #Variables to check password conditions
+    upper = False
+    lower = False
+    digit = False
+
+    # Check if password length is at least 8 characters
+    if len(password) >= 8:
+
+        # Check each character of the password
+        for ch in password:
+
+            # Check for uppercase letter
+            if ch.isupper():
+                upper = True
+
+            # Check for lowercase letter
+            elif ch.islower():
+                lower = True
+
+            # Check for digit
+            elif ch.isdigit():
+                digit = True
+
+        # Check whether all conditions are satisfied
+        if upper == True and lower == True and digit == True:
+            print("Password Accepted")
+            break         
+        else:
+            print("Invalid Password")
+
+    # If password length is less than 8
+    else:
+        print("Invalid Password")

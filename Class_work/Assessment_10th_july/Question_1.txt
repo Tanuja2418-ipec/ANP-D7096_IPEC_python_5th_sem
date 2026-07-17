@@ -1,0 +1,68 @@
+Question 1: Student Grade Analyzer (10 Marks)
+ Write a Python program that performs the following tasks: 
+    • Accept the student's name.
+    • Accept marks of 5 subjects and store them in a list.
+    • Calculate the total and percentage using a user-defined function.
+    • Using selection statements, display the grade according to the following criteria:  
+ Percentage     Grade 
+ 90 and above    A+ 
+ 75–89 A 60–74   B  
+ 40–59           C 
+ Below 40       Fail 
+Finally, display all entered marks along with total, percentage, and grade. S
+ample Input 
+Enter Name: Rahul 
+Enter Marks: 
+80 
+75 
+90 
+88 
+70 
+
+Sample Output 
+Student Name : Rahul 
+Marks : [80, 75, 90, 88, 70] 
+Total : 403 
+Percentage : 80.6 
+Grade : A 
+
+
+
+#---------------------------Coding Section-----------------------------------------
+
+
+# Taking input of name of studentvfrom the user
+name = input("Enter Name: ")
+
+# creating empty list of marks
+marks = []
+
+print("Enter marks of 5 subjects: ")
+for i in range(5):
+    #taking input of marks
+    mark = int(input(f"Subject {i+1}: "))
+    #inserting the marks to the list
+    marks.append(mark)
+
+# Calculating total_marks and percentage
+total_marks = sum(marks)
+percentage = total_marks / 5
+
+# Calculating the grade using percentage
+if percentage >= 90:
+    grade = "A+"
+elif percentage >= 75:
+    grade = "A"
+elif percentage >= 60:
+    grade = "B"
+elif percentage >= 40:
+    grade = "C"
+else:
+    grade = "Fail"
+
+# Displaying results to the user
+print("Student Name :", name)
+print("Marks :", marks)
+print("Total :", total)
+print("Percentage :", percentage)
+print("Grade :", grade)

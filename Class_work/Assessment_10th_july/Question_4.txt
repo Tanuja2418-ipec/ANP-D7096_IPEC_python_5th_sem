@@ -1,0 +1,49 @@
+Question 4: String Processing Tool (10 Marks)
+ Write a Python program that accepts a sentence from the user. 
+ Create separate user-defined functions to: 
+     1. Count vowels.  
+     2. Count consonants.  
+     3. Count words.  
+     4. Reverse the sentence.  
+Display all the results. 
+
+Sample Input 
+Python Programming Language 
+
+Sample Output 
+Vowels : 7 
+Consonants : 19 
+Words : 3 
+Reverse : egaugnaL gnimmargorP nohtyP 
+
+
+#----------------------Coding Section------------------------------------------
+
+# Taking input of a sentence from the user
+sentence = input("Enter a sentence: ")
+
+# Initialize variables
+vowels = 0
+consonants = 0
+vowel_letters = "aeiouAEIOU"
+
+# Count vowels and consonants
+for char in sentence:
+    if char.isalpha():
+        if char in vowel_letters:
+            vowels += 1
+        else:
+            consonants += 1
+
+# Count words
+words = len(sentence.split())
+
+# Reverse the sentence
+reverse = sentence[::-1]
+
+# Display the results
+print("\nResults")
+print("Vowels :", vowels)
+print("Consonants :", consonants)
+print("Words :", words)
+print("Reverse :", reverse)
