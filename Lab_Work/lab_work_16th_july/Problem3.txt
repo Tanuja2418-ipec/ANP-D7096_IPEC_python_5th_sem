@@ -1,0 +1,92 @@
+Problem 3: Number Guessing Game 
+Create a number guessing game. 
+Rules: 
+• Secret number = 57  
+• User gets only 7 attempts.  
+• If the user enters a negative number, ignore it using continue.  
+• If the user guesses correctly, terminate using break.  
+• Display the number of attempts used.
+
+
+#-------------------------Coding Section-----------------------
+
+# Secret number to be guessed
+secret_number = 57
+
+# Variable to count valid attempts
+attempts = 0
+
+# User gets a maximum of 7 valid attempts
+while attempts < 7:
+
+    # Taking input from the user
+    guess = int(input("Enter your guess: "))
+
+    # Ignore negative numbers
+    if guess < 0:
+        print("Negative numbers are not allowed. Try again!")
+        continue
+
+    # Count only valid attempts
+    attempts += 1
+
+    # Check if the guess is correct
+    if guess == secret_number:
+        print("Congratulations! You guessed the correct number.")
+        print("Attempts Used:", attempts)
+        break
+
+    # If guess is smaller than the secret number
+    elif guess < secret_number:
+        print("Too Low!")
+
+    # If guess is greater than the secret number
+    else:
+        print("Too High!")
+
+# If all attempts are used and the number is not guessed
+if attempts == 7 and guess != secret_number:
+    print("You have used all 7 attempts.")
+    print("The Secret Number was:", secret_number)
+    print("Attempts Used:", attempts)
+
+
+#------------------------Output Section--------------------------
+
+Enter your guess: 30
+Too Low!
+
+Enter your guess: -5
+Negative numbers are not allowed. Try again!
+
+Enter your guess: 70
+Too High!
+
+Enter your guess: 57
+Congratulations! You guessed the correct number.
+Attempts Used: 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

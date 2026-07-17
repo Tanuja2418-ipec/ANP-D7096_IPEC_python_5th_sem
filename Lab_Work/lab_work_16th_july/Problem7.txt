@@ -1,0 +1,161 @@
+Problem 7: Student Result Management 
+Create a dictionary where 
+Roll No → Marks 
+Store details of 10 students. 
+Perform: 
+• Find topper  
+• Find average marks  
+• Display students scoring above average  
+• Count failed students (Marks < 35)  
+• Display grade using:   
+Marks      Grade 
+90+         A 
+75-89       B 
+60-74       C
+35-59       D 
+Below 35   Fail 
+
+
+#-------------------------------Coding Section--------------------------
+
+# Student Result Management
+
+# Creating an empty dictionary
+students = {}
+
+# Taking details of 10 students
+print("Enter Roll Number and Marks of 10 Students")
+
+for i in range(10):
+    roll = int(input("Enter Roll Number: "))
+    marks = int(input("Enter Marks: "))
+    students[roll] = marks
+
+# -------------------- Find Topper --------------------
+topper_roll = 0
+highest_marks = -1
+
+for roll in students:
+    if students[roll] > highest_marks:
+        highest_marks = students[roll]
+        topper_roll = roll
+
+print("\nTopper Details")
+print("Roll Number :", topper_roll)
+print("Marks       :", highest_marks)
+
+# -------------------- Find Average Marks --------------------
+total = 0
+
+for marks in students.values():
+    total = total + marks
+
+average = total / len(students)
+
+print("\nAverage Marks =", average)
+
+# -------------------- Display Students Scoring Above Average --------------------
+print("\nStudents Scoring Above Average")
+
+for roll in students:
+    if students[roll] > average:
+        print("Roll Number:", roll, "Marks:", students[roll])
+
+# -------------------- Count Failed Students --------------------
+failed = 0
+
+for marks in students.values():
+    if marks < 35:
+        failed = failed + 1
+
+print("\nNumber of Failed Students =", failed)
+
+# -------------------- Display Grades --------------------
+print("\nStudent Grades")
+
+for roll in students:
+
+    marks = students[roll]
+
+    if marks >= 90:
+        grade = "A"
+
+    elif marks >= 75:
+        grade = "B"
+
+    elif marks >= 60:
+        grade = "C"
+
+    elif marks >= 35:
+        grade = "D"
+
+    else:
+        grade = "Fail"
+
+    print("Roll Number:", roll, "Marks:", marks, "Grade:", grade)
+
+
+
+#-------------------------Output Section-----------------------------
+
+Enter Roll Number and Marks of 10 Students
+
+Enter Roll Number: 101
+Enter Marks: 95
+
+Enter Roll Number: 102
+Enter Marks: 82
+
+Enter Roll Number: 103
+Enter Marks: 67
+
+Enter Roll Number: 104
+Enter Marks: 28
+
+Enter Roll Number: 105
+Enter Marks: 91
+
+Enter Roll Number: 106
+Enter Marks: 54
+
+Enter Roll Number: 107
+Enter Marks: 76
+
+Enter Roll Number: 108
+Enter Marks: 34
+
+Enter Roll Number: 109
+Enter Marks: 60
+
+Enter Roll Number: 110
+Enter Marks: 88
+
+Student Dictionary:
+{101: 95, 102: 82, 103: 67, 104: 28, 105: 91, 106: 54, 107: 76, 108: 34, 109: 60, 110: 88}
+
+Topper Details
+Roll Number : 101
+Marks       : 95
+
+Average Marks = 67.5
+
+Students Scoring Above Average
+Roll Number: 101 Marks: 95
+Roll Number: 102 Marks: 82
+Roll Number: 105 Marks: 91
+Roll Number: 107 Marks: 76
+Roll Number: 110 Marks: 88
+
+Number of Failed Students = 2
+
+Student Grades
+Roll Number: 101 Marks: 95 Grade: A
+Roll Number: 102 Marks: 82 Grade: B
+Roll Number: 103 Marks: 67 Grade: C
+Roll Number: 104 Marks: 28 Grade: Fail
+Roll Number: 105 Marks: 91 Grade: A
+Roll Number: 106 Marks: 54 Grade: D
+Roll Number: 107 Marks: 76 Grade: B
+Roll Number: 108 Marks: 34 Grade: Fail
+Roll Number: 109 Marks: 60 Grade: C
+Roll Number: 110 Marks: 88 Grade: B

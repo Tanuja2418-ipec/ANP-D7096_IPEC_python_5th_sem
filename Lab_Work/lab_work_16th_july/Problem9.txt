@@ -1,0 +1,89 @@
+Problem 9: Word Frequency Counter 
+Topics: Function, Dictionary, String, List 
+Accept a sentence from the user. 
+Create a function: word_frequency(sentence) 
+The function should: 
+• Remove punctuation.  
+• Ignore case sensitivity.  
+• Count frequency of every word.  
+• Display words in alphabetical order.  
+• Print the most repeated word.  
+Example: 
+Input: Python is easy. Python is powerful. 
+Output 
+easy :1 
+is :2 
+powerful :1 
+python :2  
+Most Repeated: python
+
+
+#------------------------Coding Section----------------------------
+
+# Function to count the frequency of each word
+def word_frequency(sentence):
+
+    # Convert the sentence into lowercase
+    sentence = sentence.lower()
+
+    # Remove punctuation marks
+    sentence = sentence.replace(".", "")
+    sentence = sentence.replace(",", "")
+    sentence = sentence.replace("!", "")
+    sentence = sentence.replace("?", "")
+    sentence = sentence.replace(";", "")
+    sentence = sentence.replace(":", "")
+
+    # Split the sentence into words
+    words = sentence.split()
+
+    # Create an empty dictionary
+    frequency = {}
+
+    # Count the frequency of each word
+    for word in words:
+
+        if word in frequency:
+            frequency[word] += 1
+
+        else:
+            frequency[word] = 1
+
+    # Display words in alphabetical order
+    print("Word Frequencies:")
+
+    for word in sorted(frequency):
+        print(word, ":", frequency[word])
+
+    # Find the most repeated word
+    max_word = ""
+    max_count = 0
+
+    for word in frequency:
+        if frequency[word] > max_count:
+            max_count = frequency[word]
+            max_word = word
+
+    # Display the most repeated word
+    print("Most Repeated Word :", max_word)
+
+
+# Taking sentence as input from the user
+sentence = input("Enter a sentence: ")
+
+# Calling the function
+word_frequency(sentence)
+
+#--------------------Output Section---------------------
+
+Enter a sentence: Python is easy. Python is powerful.
+
+Word Frequencies:
+easy : 1
+is : 2
+powerful : 1
+python : 2
+
+Most Repeated Word : python
+
+ 

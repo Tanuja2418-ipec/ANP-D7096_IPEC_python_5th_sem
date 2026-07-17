@@ -1,0 +1,89 @@
+Problem 8: Password Strength Checker 
+Accept a password and check whether it satisfies: 
+• Minimum 8 characters  
+• At least one uppercase letter  
+• At least one lowercase letter  
+• At least one digit  
+• At least one special character  
+Output: Strong Password 
+or 
+Weak Password 
+Also display the missing conditions. 
+
+
+#----------------------------Coding Section-------------------------------
+
+# Taking password as input from the user
+password = input("Enter Password: ")
+
+# Variables to check password conditions
+uppercase = False
+lowercase = False
+digit = False
+special = False
+
+# Checking each character of the password
+for ch in password:
+
+    # Check for uppercase letter
+    if ch >= 'A' and ch <= 'Z':
+        uppercase = True
+
+    # Check for lowercase letter
+    elif ch >= 'a' and ch <= 'z':
+        lowercase = True
+
+    # Check for digit
+    elif ch >= '0' and ch <= '9':
+        digit = True
+
+    # Check for special character
+    else:
+        special = True
+
+# Variable to determine password strength
+strong = True
+
+# Checking minimum length
+if len(password) < 8:
+    print("Password must contain at least 8 characters.")
+    strong = False
+
+# Checking uppercase letter
+if uppercase == False:
+    print("Missing: At least one uppercase letter.")
+    strong = False
+
+# Checking lowercase letter
+if lowercase == False:
+    print("Missing: At least one lowercase letter.")
+    strong = False
+
+# Checking digit
+if digit == False:
+    print("Missing: At least one digit.")
+    strong = False
+
+# Checking special character
+if special == False:
+    print("Missing: At least one special character.")
+    strong = False
+
+# Display final result
+if strong:
+    print("Strong Password")
+else:
+    print("Weak Password")
+
+#-------------------------Output Section-----------------------------
+
+Enter Password: Python@2026
+Strong Password
+
+
+Enter Password: python
+Password must contain at least 8 characters.
+Missing: At least one uppercase letter.
+Missing: At least one digit.
+Missing: At least one special character.
+Weak Password

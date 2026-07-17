@@ -1,0 +1,70 @@
+Problem 6: Tuple Operations 
+Create a tuple containing names of 15 students. 
+Perform the following: 
+• Count total students  
+• Display first five students  
+• Display last five students  
+• Search a student name  
+• Count occurrences of a given name  
+• Convert tuple into list and sort alphabetically  
+
+
+#---------------------------Coding Section------------------------
+
+# Creating a tuple of 15 student names
+students = (
+    "Rahul", "Priya", "Aman", "Neha", "Riya",
+    "Vikas", "Anjali", "Rohit", "Karan", "Sneha",
+    "Rahul", "Pooja", "Arjun", "Simran", "Ankit"
+)
+
+# -------------------- Count Total Students --------------------
+print("Total Students =", len(students))
+
+# -------------------- Display First Five Students --------------------
+print("First Five Students:")
+print(students[:5])
+
+# -------------------- Display Last Five Students --------------------
+print("Last Five Students:")
+print(students[-5:])
+
+# -------------------- Search a Student Name --------------------
+name = input("Enter student name to search: ")
+
+if name in students:
+    print(name, "is present in the tuple.")
+else:
+    print(name, "is not present in the tuple.")
+
+# -------------------- Count Occurrences of a Given Name --------------------
+count = students.count(name)
+
+print("Occurrences of", name, "=", count)
+
+# -------------------- Convert Tuple into List --------------------
+student_list = list(students)
+
+# Sorting the list alphabetically
+student_list.sort()
+
+print("tudents in Alphabetical Order:")
+print(student_list)
+
+
+#-------------------------Output Section----------------------------
+
+Total Students = 15
+
+First Five Students:
+('Rahul', 'Priya', 'Aman', 'Neha', 'Riya')
+
+Last Five Students:
+('Rahul', 'Pooja', 'Arjun', 'Simran', 'Ankit')
+
+Enter student name to search: Rahul
+Rahul is present in the tuple.
+Occurrences of Rahul = 2
+
+Students in Alphabetical Order:
+['Aman', 'Anjali', 'Ankit', 'Arjun', 'Karan', 'Neha', 'Pooja', 'Priya', 'Rahul', 'Rahul', 'Riya', 'Rohit', 'Simran', 'Sneha', 'Vikas']

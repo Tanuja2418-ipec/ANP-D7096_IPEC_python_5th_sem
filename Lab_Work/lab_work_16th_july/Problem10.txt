@@ -1,0 +1,271 @@
+Problem 10: Student Record Management System 
+Create a menu-driven application. 
+Each student should have: 
+• Roll Number  
+• Name  
+• Age  
+• Course  
+• Marks  
+Store records using a list of dictionaries. 
+Menu: 
+1. Add Student 
+2. Display All Students 
+3. Search Student by Roll Number 
+4. Update Marks 
+5. Delete Student 
+6. Display Topper 
+7. Display Average Marks 
+8. Display Students Above Average 
+9. Exit 
+Requirements: 
+• Implement each menu option using separate user-defined functions.  
+• Validate duplicate roll numbers.  
+• Handle invalid menu choices.  
+• Keep displaying the menu until the user selects Exit. 
+
+
+#---------------------Coding Section-----------------------------
+
+
+# Creating a empty list to store student records
+students = []
+
+#loop
+while True:
+
+    # Displaying the menu
+    print("\n========== Student Record Management System ==========")
+    print("1. Add Student")
+    print("2. Display All Students")
+    print("3. Search Student by Roll Number")
+    print("4. Update Marks")
+    print("5. Delete Student")
+    print("6. Display Topper")
+    print("7. Display Average Marks")
+    print("8. Display Students Above Average")
+    print("9. Exit")
+
+    # Asking user to choose 
+    choice = int(input("Enter your choice: "))
+
+    # -------------------- Add Student --------------------
+    if choice == 1:
+
+        # Taking input of roll number from the user
+        roll_no = int(input("Enter Roll Number: "))
+
+        # Checking whether roll number already exists
+        duplicate = False
+
+        for student in students:
+            if student["Roll Number"] == roll_no:
+                duplicate = True
+                break
+
+        # If duplicate roll number is found
+        if duplicate:
+            print("Roll Number already exists!")
+
+        # If roll number is unique, add student
+        else:
+            name = input("Enter Name: ")
+            age = int(input("Enter Age: "))
+            course = input("Enter Course: ")
+            marks = float(input("Enter Marks: "))
+
+            # Creating dictionary for one student
+            student = {
+                "Roll Number": roll,
+                "Name": name,
+                "Age": age,
+                "Course": course,
+                "Marks": marks
+            }
+
+            # Adding student to the list
+            students.append(student)
+
+            print("Student added successfully!")
+
+    # -------------------- Display All Students --------------------
+    elif choice == 2:
+
+        # Checking whether records exist
+        if len(students) == 0:
+            print("No student records found.")
+
+        else:
+            print("Student Records")
+            print("-" * 50)
+
+            # Displaying every student's details
+            for student in students:
+                print("Roll Number :", student["Roll Number"])
+                print("Name        :", student["Name"])
+                print("Age         :", student["Age"])
+                print("Course      :", student["Course"])
+                print("Marks       :", student["Marks"])
+                print("-" * 50)
+
+    # -------------------- Search Student --------------------
+    elif choice == 3:
+
+        roll_no = int(input("Enter Roll Number to Search: "))
+
+        found = False
+
+        # Searching student by roll number
+        for student in students:
+            if student["Roll Number"] == roll_no:
+                print("Student Found")
+                print(student)
+                found = True
+                break
+
+        if found == False:
+            print("Student not found.")
+
+    # -------------------- Update Marks --------------------
+    elif choice == 4:
+
+        roll_no = int(input("Enter Roll Number: "))
+
+        found = False
+
+        # Searching student and updating marks
+        for student in students:
+            if student["Roll Number"] == roll_no:
+                student["Marks"] = float(input("Enter New Marks: "))
+                print("Marks updated successfully!")
+                found = True
+                break
+
+        if found == False:
+            print("Student not found.")
+
+    # -------------------- Delete Student --------------------
+    elif choice == 5:
+
+        roll_no = int(input("Enter Roll Number to Delete: "))
+
+        found = False
+
+        # Searching student and deleting record
+        for student in students:
+            if student["Roll Number"] == roll_no:
+                students.remove(student)
+                print("Student deleted successfully!")
+                found = True
+                break
+
+        if found == False:
+            print("Student not found.")
+
+    # -------------------- Display Topper --------------------
+    elif choice == 6:
+
+        # Checking whether records exist
+        if len(students) == 0:
+            print("No student records found.")
+
+        else:
+            topper = students[0]
+
+            # Finding student with highest marks
+            for student in students:
+                if student["Marks"] > topper["Marks"]:
+                    topper = student
+
+            print("\nTopper Details")
+            print(topper)
+
+    # -------------------- Display Average Marks --------------------
+    elif choice == 7:
+
+        # Checking whether records exist
+        if len(students) == 0:
+            print("No student records found.")
+
+        else:
+            total = 0
+
+            # Calculating total marks
+            for student in students:
+                total = total + student["Marks"]
+
+            # Calculating average
+            average = total / len(students)
+
+            print("Average Marks =", average)
+
+    # -------------------- Display Students Above Average --------------------
+    elif choice == 8:
+
+        # Checking whether records exist
+        if len(students) == 0:
+            print("No student records found.")
+
+        else:
+            total = 0
+
+            # Calculating total marks
+            for student in students:
+                total = total + student["Marks"]
+
+            # Finding average marks
+            average = total / len(students)
+
+            print("Average Marks =", average)
+            print("Students Above Average")
+
+            found = False
+
+            # Displaying students scoring above average
+            for student in students:
+                if student["Marks"] > average:
+                    print(student)
+                    found = True
+
+            if found == False:
+                print("No student scored above average.")
+
+    # -------------------- Exit Program --------------------
+    elif choice == 9:
+
+        print("Thank You!")
+        break
+
+    # -------------------- Invalid Choice --------------------
+    else:
+
+        print("Invalid Choice! Please enter a number between 1 and 9.")
+
+
+#------------------------Output Section--------------------------------
+
+
+
+========== Student Record Management System ==========
+1. Add Student
+2. Display All Students
+3. Search Student by Roll Number
+4. Update Marks
+5. Delete Student
+6. Display Topper
+7. Display Average Marks
+8. Display Students Above Average
+9. Exit
+
+Enter your choice: 1
+
+Enter Roll Number: 101
+Enter Name: Rahul
+Enter Age: 20
+Enter Course: B.Tech
+Enter Marks: 85
+
+Student added successfully!
+
+
+
+           

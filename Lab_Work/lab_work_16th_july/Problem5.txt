@@ -1,0 +1,105 @@
+Problem 5: List Processing 
+Accept 20 integers from the user into a list. 
+Perform the following: 
+a) Print largest number  
+b) Print second largest number  
+c) Print smallest number  
+d) Remove duplicate elements  
+e) Print only even numbers  
+f) Print numbers divisible by both 3 and 5  
+g) Reverse the list without using reverse()  
+
+
+#---------------------Coding Section--------------------------
+
+# List Processing Program
+
+# Creating an empty list
+numbers = []
+
+# Taking 20 integers as input from the user
+print("Enter 20 integers:")
+
+for i in range(20):
+    num = int(input())
+    numbers.append(num)
+
+# -------------------- Largest Number --------------------
+largest = numbers[0]
+
+for num in numbers:
+    if num > largest:
+        largest = num
+
+print("\nLargest Number =", largest)
+
+# -------------------- Second Largest Number --------------------
+second_largest = numbers[0]
+
+for num in numbers:
+    if num != largest:
+        second_largest = num
+        break
+
+for num in numbers:
+    if num > second_largest and num != largest:
+        second_largest = num
+
+print("Second Largest Number =", second_largest)
+
+# -------------------- Smallest Number --------------------
+smallest = numbers[0]
+
+for num in numbers:
+    if num < smallest:
+        smallest = num
+
+print("Smallest Number =", smallest)
+
+# -------------------- Remove Duplicate Elements --------------------
+unique_list = []
+
+for num in numbers:
+    if num not in unique_list:
+        unique_list.append(num)
+
+print("List After Removing Duplicates =", unique_list)
+
+# -------------------- Print Even Numbers --------------------
+print("Even Numbers:")
+
+for num in numbers:
+    if num % 2 == 0:
+        print(num, end=" ")
+
+print()
+
+# -------------------- Numbers Divisible by 3 and 5 --------------------
+print("Numbers Divisible by Both 3 and 5:")
+
+for num in numbers:
+    if num % 3 == 0 and num % 5 == 0:
+        print(num, end=" ")
+
+print()
+
+# -------------------- Reverse the List Without Using reverse() --------------------
+print("Reversed List:")
+for i in range(len(numbers) - 1, -1, -1):
+    print(numbers[i], end=" ")
+
+#-------------------------Output Section-------------------------
+
+Enter 20 integers:
+numbers=[10,15,8,25,30,40,8,15,50,60,75,20,12,18,90,5,10,45,70,30]
+
+Largest Number = 90
+Second Largest Number = 75
+Smallest Number = 5
+List After Removing Duplicates = [10, 15, 8, 25, 30, 40, 50, 60, 75, 20, 12, 18, 90, 5, 45, 70]
+Even Numbers:
+10 8 30 40 8 50 60 20 12 18 90 10 70 30
+Numbers Divisible by Both 3 and 5:
+15 30 15 60 75 90 45 30
+Reversed List:
+30 70 45 10 5 90 18 12 20 75 60 50 15 8 40 30 25 8 15 10
